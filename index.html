@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#07100d">
+  <meta name="description" content="NIXX VIP — license store and official contact channels">
+  <title>NIXX VIP — License Store</title>
+  <link rel="stylesheet" href="./style.css">
+  <script defer src="./script.js"></script>
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <div class="orb orb-one" aria-hidden="true"></div>
+  <div class="orb orb-two" aria-hidden="true"></div>
+  <div id="particles" aria-hidden="true"></div>
+
+  <header class="site-header shell">
+    <a class="brand" href="#">
+      <span class="brand-symbol">ϟ</span>
+      <span><b>NIXX</b><small>VIP LICENSE STORE</small></span>
+    </a>
+    <nav class="nav">
+      <a href="#paket">Paket</a>
+      <a href="#fitur">Fitur</a>
+      <a href="#kontak">Kontak</a>
+      <a class="button button-small button-primary" href="#paket">Mulai order</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero shell">
+      <div class="hero-copy reveal">
+        <div class="eyebrow"><i></i> ACCESS MADE SIMPLE</div>
+        <h1>Akses premium.<br><em>Tanpa ribet.</em></h1>
+        <p>Pilih durasi lisensi NIXX VIP, order lewat jalur resmi, dan dapatkan bantuan aktivasi dari admin.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#paket">Pilih lisensi <span>↗</span></a>
+          <a class="button button-ghost" href="#kontak">Hubungi admin</a>
+        </div>
+        <div class="live-status"><span></span> Support aktif sesuai jam operasional</div>
+      </div>
+
+      <div class="hero-console reveal delay-one">
+        <div class="console-head"><span>NIXX / ACCESS_LAYER</span><div><i></i><i></i><i></i></div></div>
+        <div class="console-body">
+          <p><strong>›</strong> initializing license layer<span class="blink">_</span></p>
+          <p><strong>›</strong> plan <b>NIXX VIP</b></p>
+          <p><strong>›</strong> status <mark>READY</mark></p>
+          <p><strong>›</strong> support <mark>ONLINE</mark></p>
+          <hr>
+          <p class="success"><strong>✓</strong> secure checkout enabled</p>
+        </div>
+        <div class="console-stats"><div><b>24/7</b><span>masa aktif</span></div><div><b>VIP</b><span>priority access</span></div></div>
+      </div>
+    </section>
+
+    <section class="shell ad-section" aria-label="Promo NIXX VIP">
+      <div class="promo-banner reveal" id="promoBanner">
+        <div class="promo-media">
+          <div class="promo-slides" id="promoSlides"></div>
+          <button class="promo-nav promo-prev" id="promoPrev" type="button" aria-label="Gambar sebelumnya">‹</button>
+          <button class="promo-nav promo-next" id="promoNext" type="button" aria-label="Gambar berikutnya">›</button>
+          <div class="promo-dots" id="promoDots" aria-label="Pilih gambar"></div>
+        </div>
+        <div class="promo-copy">
+          <span class="promo-kicker">NIXX VIP / DIGITAL ACCESS</span>
+          <h2 id="promoTitle">NIXX VIP</h2>
+          <p id="promoDescription">Pilih paket lisensi sesuai kebutuhanmu. Gambar promo akan berganti otomatis.</p>
+          <div class="promo-meta"><b id="promoPrice">Mulai Rp5.000</b><span id="promoDuration">1–30 Hari</span></div>
+          <a class="button button-primary" href="#paket">Lihat paket <span>↗</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="shell section" id="paket">
+      <div class="section-heading reveal">
+        <div><span class="section-number">01 / LICENSE PLANS</span><h2>Pilih masa aktif</h2></div>
+        <p>Harga dapat kamu ubah langsung di atribut data paket. Semua tombol order memakai pesan WhatsApp otomatis.</p>
+      </div>
+      <div class="filter-row reveal">
+        <button class="filter active" data-filter="all">Semua</button>
+        <button class="filter" data-filter="short">Harian</button>
+        <button class="filter" data-filter="medium">Mingguan</button>
+        <button class="filter" data-filter="long">Bulanan</button>
+      </div>
+      <div class="plan-grid" id="planGrid"></div>
+    </section>
+
+    <section class="shell section" id="fitur">
+      <div class="section-heading reveal">
+        <div><span class="section-number">02 / INCLUDED</span><h2>Yang kamu dapatkan</h2></div>
+        <p>Halaman ini adalah storefront dan kanal order. Detail akses diproses oleh admin sesuai paket yang dipilih.</p>
+      </div>
+      <div class="feature-grid">
+        <article class="feature reveal"><span class="feature-icon">◈</span><h3>VIP feature set</h3><p>Akses fitur premium sesuai paket dan masa aktif lisensi.</p></article>
+        <article class="feature reveal delay-one"><span class="feature-icon">⌁</span><h3>Visual & session tools</h3><p>Utilitas tampilan dan status sesi dalam satu akses.</p></article>
+        <article class="feature reveal delay-two"><span class="feature-icon">↗</span><h3>Update channel</h3><p>Info pembaruan dibagikan lewat kanal resmi NIXX.</p></article>
+        <article class="feature reveal"><span class="feature-icon">⌘</span><h3>Personal key</h3><p>Key personal dengan durasi yang jelas dan bisa dicek ke server.</p></article>
+        <article class="feature reveal delay-one"><span class="feature-icon">⚡</span><h3>Fast activation</h3><p>Key dikirim setelah pembayaran terverifikasi oleh admin.</p></article>
+        <article class="feature reveal delay-two"><span class="feature-icon">?</span><h3>Support</h3><p>Hubungi admin jika ada kendala aktivasi atau expiry.</p></article>
+      </div>
+    </section>
+
+    <section class="shell section license-section">
+      <div class="license-card reveal">
+        <div><span class="section-number">LICENSE STATUS</span><h2>Cek key kamu</h2><p>Kolom ini siap terhubung ke API license. Sebelum backend dipasang, hasilnya akan memberi status API belum aktif.</p></div>
+        <form id="licenseForm"><label for="licenseKey">License key</label><div class="license-input"><input id="licenseKey" placeholder="NIXX-XXXX-XXXX-XXXX" autocomplete="off" required><button class="button button-primary" type="submit">Cek key</button></div><output id="licenseResult" role="status"></output></form>
+      </div>
+    </section>
+
+    <section class="shell section" id="kontak">
+      <div class="section-heading reveal">
+        <div><span class="section-number">03 / OFFICIAL CHANNELS</span><h2>Butuh bantuan?</h2></div>
+        <p>Order lewat WhatsApp. Discord dan Telegram dipakai untuk update komunitas serta support.</p>
+      </div>
+      <div class="contact-grid">
+        <a class="contact-card reveal" href="https://t.me/nixcooll" target="_blank" rel="noreferrer"><span class="contact-icon telegram">✈</span><span><b>Telegram</b><small>@nixsukakamu</small></span><strong>↗</strong></a>
+        <a class="contact-card reveal delay-one" href="https://discord.gg/DPbJMHGD" target="_blank" rel="noreferrer"><span class="contact-icon discord">◉</span><span><b>Discord</b><small>Join server resmi</small></span><strong>↗</strong></a>
+        <a class="contact-card reveal delay-two" href="https://wa.me/6283182791150" target="_blank" rel="noreferrer"><span class="contact-icon whatsapp">◔</span><span><b>WhatsApp</b><small>+62 831-8279-1150</small></span><strong>↗</strong></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="shell"><span>© <span id="year"></span> NIXX VIP License Store</span><span>Digital access · Official support only</span></footer>
+
+  <div class="modal-backdrop" id="orderModal" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="close" id="closeModal" aria-label="Tutup">×</button><span class="section-number">ORDER REQUEST</span><h2 id="modalTitle">Order lisensi</h2><p>Isi data singkat, lalu lanjutkan ke WhatsApp admin.</p>
+      <div class="order-summary"><span id="selectedPlan">NIXX VIP</span><b id="selectedPrice">—</b></div>
+      <label for="buyerName">Nama / username</label><input id="buyerName" placeholder="Contoh: nixxteam" autocomplete="name">
+      <label for="buyerNote">Catatan (opsional)</label><input id="buyerNote" placeholder="Contoh: proses sekarang">
+      <button class="button button-primary button-full" id="continueOrder">Lanjut ke WhatsApp ↗</button>
+    </div>
+  </div>
+</body>
+</html>
