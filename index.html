@@ -1,185 +1,25 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="id">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#080b10">
-  <meta name="description" content="NIXX VIP — akses premium, key personal, dan bantuan resmi.">
-  <title>NIXX VIP — Akses Premium</title>
-  <link rel="stylesheet" href="./style.css">
-  <script defer src="./script.js"></script>
-</head>
-<body>
-  <div class="noise" aria-hidden="true"></div>
-  <div class="ambient ambient-one" aria-hidden="true"></div>
-  <div class="ambient ambient-two" aria-hidden="true"></div>
-  <div id="particles" aria-hidden="true"></div>
-
-  <header class="site-header shell">
-    <a class="brand" href="#" aria-label="NIXX VIP home">
-      <span class="brand-mark"><span>ϟ</span></span>
-      <span class="brand-copy"><b>NIXX<span>VIP</span></b><small>SISTEM AKSES PREMIUM</small></span>
-    </a>
-    <nav class="nav" aria-label="Navigasi utama">
-      <a href="#paket">Paket</a>
-      <a href="#fitur">Keunggulan</a>
-      <a href="#rating">Rating</a>
-      <a href="#kontak">Bantuan</a>
-      <a class="button button-small button-primary" href="#paket">Dapatkan akses <span>↗</span></a>
-    </nav>
-  </header>
-
-  <main>
-    <section class="hero shell">
-      <div class="hero-copy reveal">
-        <div class="eyebrow"><span class="eyebrow-line"></span> NIXX VIP / AKSES DIGITAL <span class="eyebrow-live">ONLINE</span></div>
-        <h1>Naikkan<br><em>levelmu.</em></h1>
-        <p class="hero-lead">Akses premium dengan key personal, aktivasi cepat, dan bantuan resmi yang siap membantu saat kamu butuh.</p>
-        <div class="hero-actions">
-          <a class="button button-primary button-large" href="#paket">Pilih paket <span>↗</span></a>
-          <a class="text-link" href="#license"><span class="play-icon">▶</span> Cek lisensi</a>
-        </div>
-        <div class="hero-proof">
-          <div class="avatar-stack" aria-hidden="true"><span>Ｎ</span><span>V</span><span>+</span></div>
-          <p><strong>Akses resmi NIXX</strong><br><span>Key personal · Server terverifikasi</span></p>
-        </div>
-      </div>
-
-      <div class="hero-visual reveal delay-one">
-        <div class="hero-glow" aria-hidden="true"></div>
-        <div class="access-card">
-          <div class="access-card-top"><span class="mini-label">AKSES SAAT INI</span><span class="secure-pill"><i></i> AMAN</span></div>
-          <div class="access-card-main">
-            <div class="access-icon">ϟ</div>
-            <div><span>NIXX VIP</span><strong>Akses premium</strong></div>
-          </div>
-          <div class="access-progress"><span></span></div>
-          <div class="access-card-foot"><span>STATUS LISENSI</span><b>SIAP DIAKTIFKAN</b></div>
-        </div>
-        <div class="visual-chip chip-top"><span class="chip-dot"></span> ONLINE SEKARANG</div>
-        <div class="visual-chip chip-bottom"><b>24/7</b><span>bantuan akses</span></div>
-        <div class="hero-grid" aria-hidden="true"></div>
-      </div>
-    </section>
-
-    <section class="shell signal-row reveal" aria-label="Keunggulan NIXX VIP">
-      <div><span class="signal-icon">✦</span><span><b>Key personal</b><small>Aktif sesuai durasi</small></span></div>
-      <div><span class="signal-icon">◉</span><span><b>Server terverifikasi</b><small>Validasi online</small></span></div>
-      <div><span class="signal-icon">↗</span><span><b>Bantuan cepat</b><small>Jalur resmi NIXX</small></span></div>
-      <div class="signal-code"><span>STATUS</span><b><i></i> SEMUA SISTEM SIAP</b></div>
-    </section>
-
-    <section class="shell ad-section" aria-label="Promo NIXX VIP">
-      <div class="promo-banner reveal" id="promoBanner">
-        <div class="promo-media">
-          <div class="promo-slides" id="promoSlides"></div>
-          <div class="promo-overlay-label">NIXX / SHOWCASE</div>
-          <button class="promo-nav promo-prev" id="promoPrev" type="button" aria-label="Gambar sebelumnya">‹</button>
-          <button class="promo-nav promo-next" id="promoNext" type="button" aria-label="Gambar berikutnya">›</button>
-          <div class="promo-dots" id="promoDots" aria-label="Pilih gambar"></div>
-        </div>
-        <div class="promo-copy">
-          <span class="promo-kicker">AKSES UNGGULAN</span>
-          <h2 id="promoTitle">NIXX VIP</h2>
-          <p id="promoDescription">Pilih paket lisensi sesuai kebutuhanmu. Gambar promo akan berganti otomatis.</p>
-          <div class="promo-meta"><b id="promoPrice">Mulai Rp5.000</b><span id="promoDuration">1–30 Hari</span></div>
-          <a class="button button-primary" href="#paket">Lihat semua paket <span>↗</span></a>
-        </div>
-      </div>
-    </section>
-
-    <section class="shell section" id="paket">
-      <div class="section-heading reveal">
-        <div><span class="section-number">01 / PILIHAN LISENSI</span><h2>Pilih aksesmu.</h2></div>
-        <p>Durasi fleksibel, proses jelas, dan semua key divalidasi ke server resmi NIXX.</p>
-      </div>
-      <div class="filter-row reveal" role="tablist" aria-label="Filter paket">
-        <button class="filter active" data-filter="all" type="button">Semua paket</button>
-        <button class="filter" data-filter="short" type="button">Harian</button>
-        <button class="filter" data-filter="medium" type="button">Mingguan</button>
-        <button class="filter" data-filter="long" type="button">Bulanan</button>
-      </div>
-      <div class="plan-grid" id="planGrid"></div>
-    </section>
-
-    <section class="shell section feature-section" id="fitur">
-      <div class="section-heading reveal">
-        <div><span class="section-number">02 / STANDAR NIXX</span><h2>Dibuat untuk sesimu.</h2></div>
-        <p>Satu akses personal untuk pengalaman yang lebih rapi, cepat, dan gampang dicek.</p>
-      </div>
-      <div class="feature-grid">
-        <article class="feature reveal"><span class="feature-icon">◈</span><h3>Fitur premium</h3><p>Akses fitur premium sesuai paket dan masa aktif lisensimu.</p><span class="feature-number">01</span></article>
-        <article class="feature reveal delay-one"><span class="feature-icon">⌁</span><h3>Peralatan sesi</h3><p>Utilitas tampilan dan status sesi dikemas dalam satu akses.</p><span class="feature-number">02</span></article>
-        <article class="feature reveal delay-two"><span class="feature-icon">↗</span><h3>Pembaruan resmi</h3><p>Dapatkan informasi pembaruan dari kanal resmi NIXX.</p><span class="feature-number">03</span></article>
-        <article class="feature reveal"><span class="feature-icon">⌘</span><h3>Lisensi personal</h3><p>Setiap key punya durasi dan status yang bisa dicek online.</p><span class="feature-number">04</span></article>
-        <article class="feature reveal delay-one"><span class="feature-icon">⚡</span><h3>Aktivasi cepat</h3><p>Key dikirim setelah pembayaran dan data order diverifikasi.</p><span class="feature-number">05</span></article>
-        <article class="feature reveal delay-two"><span class="feature-icon">?</span><h3>Bantuan admin</h3><p>Hubungi admin melalui jalur resmi jika ada kendala.</p><span class="feature-number">06</span></article>
-      </div>
-    </section>
-
-    <section class="shell section rating-section" id="rating">
-      <div class="section-heading reveal">
-        <div><span class="section-number">03 / KOMENTAR KOMUNITAS</span><h2>Mereka sudah coba.</h2></div>
-        <p>Geser kartu rating untuk melihat komentar dari pengguna NIXX VIP.</p>
-      </div>
-      <div class="rating-summary reveal">
-        <div class="rating-score"><strong>4.9</strong><span>/ 5</span></div>
-        <div class="rating-stars" aria-label="Rating 4.9 dari 5">★★★★★</div>
-        <p>Rating komunitas berdasarkan pengalaman aktivasi dan bantuan admin.</p>
-      </div>
-      <div class="rating-track" tabindex="0" aria-label="Geser untuk melihat rating komunitas">
-        <article class="rating-card reveal"><div class="rating-card-top"><span class="stars">★★★★★</span><span class="rating-tag">AKTIF</span></div><p>“Prosesnya cepat, key langsung bisa dipakai dan admin responsif.”</p><div class="rating-user"><span class="rating-avatar">J</span><span><b>jaype</b><small>Pengguna NIXX VIP</small></span></div></article>
-        <article class="rating-card reveal delay-one"><div class="rating-card-top"><span class="stars">★★★★★</span><span class="rating-tag">AKTIF</span></div><p>“Enak bisa cek status key sendiri. Tidak perlu tanya admin terus.”</p><div class="rating-user"><span class="rating-avatar avatar-purple">J</span><span><b>junoffc</b><small>Pengguna NIXX VIP</small></span></div></article>
-        <article class="rating-card reveal delay-two"><div class="rating-card-top"><span class="stars">★★★★★</span><span class="rating-tag">AKTIF</span></div><p>“Order jelas, aktivasi aman, dan durasinya kelihatan dari server.”</p><div class="rating-user"><span class="rating-avatar avatar-blue">N</span><span><b>nduy</b><small>Pengguna NIXX VIP</small></span></div></article>
-        <article class="rating-card reveal"><div class="rating-card-top"><span class="stars">★★★★★</span><span class="rating-tag">AKTIF</span></div><p>“Bantuannya membantu banget waktu saya pertama kali memasukkan key.”</p><div class="rating-user"><span class="rating-avatar avatar-gold">N</span><span><b>nixxteam</b><small>Pengguna NIXX VIP</small></span></div></article>
-        <article class="rating-card reveal delay-one"><div class="rating-card-top"><span class="stars">★★★★★</span><span class="rating-tag">AKTIF</span></div><p>“Tampilannya makin rapi dan info lisensinya gampang dipahami.”</p><div class="rating-user"><span class="rating-avatar avatar-pink">A</span><span><b>abl</b><small>Pengguna NIXX VIP</small></span></div></article>
-      </div>
-    </section>
-
-    <section class="shell section license-section" id="license">
-      <div class="license-card reveal">
-        <div class="license-copy">
-          <span class="section-number">04 / CEK LISENSI</span>
-          <h2>Sudah punya key?</h2>
-          <p>Cek status, masa aktif, dan tanggal berakhir lisensimu langsung dari server NIXX.</p>
-          <div class="license-note"><i></i> Data lisensi tidak disimpan di browser</div>
-        </div>
-        <form id="licenseForm">
-          <label for="licenseKey">Masukkan key lisensi</label>
-          <div class="license-input"><input id="licenseKey" placeholder="NIXX-XXXX-XXXX-XXXX-XXXX" autocomplete="off" required><button class="button button-primary" type="submit">Cek key <span>↗</span></button></div>
-          <output id="licenseResult" role="status"></output>
-        </form>
-      </div>
-    </section>
-
-    <section class="shell section contact-section" id="kontak">
-      <div class="section-heading reveal">
-        <div><span class="section-number">05 / KANAL RESMI</span><h2>Butuh bantuan?</h2></div>
-        <p>Pemesanan dan bantuan hanya melalui kanal resmi agar prosesmu tetap aman.</p>
-      </div>
-      <div class="contact-grid">
-        <a class="contact-card reveal" href="https://t.me/nixcooll" target="_blank" rel="noreferrer"><span class="contact-icon telegram">✈</span><span><b>Telegram</b><small>@nixsukakamu</small></span><strong>↗</strong></a>
-        <a class="contact-card reveal delay-one" href="https://discord.gg/DPbJMHGD" target="_blank" rel="noreferrer"><span class="contact-icon discord">◉</span><span><b>Discord</b><small>Gabung server resmi</small></span><strong>↗</strong></a>
-        <a class="contact-card reveal delay-two" href="https://wa.me/6283182791150" target="_blank" rel="noreferrer"><span class="contact-icon whatsapp">◔</span><span><b>WhatsApp</b><small>+62 831-8279-1150</small></span><strong>↗</strong></a>
-      </div>
-    </section>
-  </main>
-
-  <footer class="shell"><span>© <span id="year"></span> NIXX VIP</span><span>Akses digital premium <i>·</i> Bantuan resmi saja</span></footer>
-
-  <div class="modal-backdrop" id="orderModal" aria-hidden="true">
-    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-      <button class="close" id="closeModal" aria-label="Tutup">×</button>
-      <span class="section-number">FORM ORDER</span>
-      <h2 id="modalTitle">Order lisensi</h2>
-      <p>Isi data singkat, lalu lanjutkan ke WhatsApp admin resmi.</p>
-      <div class="order-summary"><span id="selectedPlan">NIXX VIP</span><b id="selectedPrice">—</b></div>
-      <label for="buyerName">Nama / username</label>
-      <input id="buyerName" placeholder="Contoh: nixxteam" autocomplete="name">
-      <label for="buyerNote">Catatan (opsional)</label>
-      <input id="buyerNote" placeholder="Contoh: proses sekarang">
-      <button class="button button-primary button-full" id="continueOrder">Lanjut ke WhatsApp ↗</button>
-    </div>
-  </div>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <title>Buy Akses Key VVIP Nix — Nixx VVIP Store</title>
+    <meta name="description" content="Beli akses key VVIP Nixx mulai dari Rp10.000, gabung reseller Rp120.000, dan tanya open Roblox Lua script langsung ke owner Nixx." />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:title" content="Buy Akses Key VVIP Nix — Nixx VVIP Store" />
+    <meta property="og:description" content="Akses digital yang jelas, cepat, dan personal. Pilih paketmu dan chat owner Nixx." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Buy Akses Key VVIP Nix — Nixx VVIP Store" />
+    <meta name="twitter:description" content="Akses key mulai Rp10.000, reseller Rp120.000, dan open Roblox Lua script via DM owner Nixx." />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script type="module" crossorigin src="/assets/index-DR8vlbth.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-D0IWy9Dd.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
 </html>
