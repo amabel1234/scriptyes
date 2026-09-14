@@ -11,15 +11,15 @@ const PRODUCTS = [
     title: "1 Hari",
     price: "Rp5.000",
     days: 1,
-    badge: "STARTER ACCESS",
+    badge: "AKSES PEMULA",
     shortDescription: "Paket singkat untuk mencoba akses dan alur aktivasi NIXX VIP.",
     description: "Lisensi 1 hari untuk kebutuhan akses sementara. Setelah pembayaran diverifikasi admin, kamu mendapatkan key personal dengan masa aktif 24 jam sejak pertama kali diaktifkan.",
     features: [
       "Masa aktif 24 jam setelah aktivasi",
-      "License key personal",
+      "Key lisensi personal",
       "Pengecekan status key melalui halaman resmi",
       "Panduan aktivasi dari admin",
-      "Support order melalui WhatsApp",
+      "Bantuan order melalui WhatsApp",
     ],
   },
   {
@@ -29,15 +29,15 @@ const PRODUCTS = [
     title: "3 Hari",
     price: "Rp10.000",
     days: 3,
-    badge: "BEST VALUE",
+    badge: "PALING HEMAT",
     popular: true,
     shortDescription: "Pilihan seimbang untuk pemakaian beberapa hari dengan harga lebih hemat.",
     description: "Lisensi 3 hari dengan key personal dan proses aktivasi yang sama seperti paket lainnya. Cocok jika kamu ingin akses lebih lama tanpa mengambil paket bulanan.",
     features: [
       "Masa aktif 72 jam setelah aktivasi",
-      "License key personal",
+      "Key lisensi personal",
       "Status key dapat dicek online",
-      "Priority support untuk kendala aktivasi",
+      "Bantuan prioritas untuk kendala aktivasi",
       "Informasi pembaruan dari kanal resmi",
     ],
   },
@@ -48,15 +48,15 @@ const PRODUCTS = [
     title: "7 Hari",
     price: "Rp20.000",
     days: 7,
-    badge: "WEEKLY ACCESS",
+    badge: "AKSES MINGGUAN",
     shortDescription: "Akses mingguan untuk penggunaan yang lebih konsisten dan praktis.",
     description: "Paket mingguan dengan masa aktif 7 × 24 jam. Key dibuat khusus untuk pembeli dan dapat diperiksa kapan saja menggunakan fitur Cek Key.",
     features: [
       "Masa aktif 7 × 24 jam setelah aktivasi",
-      "License key personal",
-      "Detail tanggal aktivasi dan expiry",
-      "Priority support",
-      "Update informasi lewat kanal resmi",
+      "Key lisensi personal",
+      "Detail tanggal aktivasi dan berakhir",
+      "Bantuan prioritas",
+      "Pembaruan dari kanal resmi",
     ],
   },
   {
@@ -66,14 +66,14 @@ const PRODUCTS = [
     title: "30 Hari",
     price: "Rp50.000",
     days: 30,
-    badge: "FULL MONTH",
+    badge: "PAKET BULANAN",
     shortDescription: "Paket bulanan untuk penggunaan jangka panjang dengan nilai terbaik.",
-    description: "Lisensi 30 hari dengan key personal. Masa aktif dihitung dari aktivasi pertama dan detail expiry dapat dilihat kembali melalui halaman Cek Key.",
+    description: "Lisensi 30 hari dengan key personal. Masa aktif dihitung dari aktivasi pertama dan detail tanggal berakhir dapat dilihat kembali melalui halaman Cek Key.",
     features: [
       "Masa aktif 30 × 24 jam setelah aktivasi",
-      "License key personal",
-      "Detail status dan expiry online",
-      "VIP support",
+      "Key lisensi personal",
+      "Detail status dan berakhir online",
+      "Bantuan VIP",
       "Akses informasi pembaruan resmi",
     ],
   },
@@ -127,10 +127,10 @@ function renderProducts(filter = "all") {
       ${product.popular ? '<span class="popular">PALING LARIS</span>' : ""}
       <span class="plan-kicker">${escapeHtml(product.badge)}</span>
       <h3>${escapeHtml(product.title)}</h3>
-      <strong class="price">${escapeHtml(product.price)} <small>/ akses</small></strong>
+       <strong class="price">${escapeHtml(product.price)} <small>/ masa aktif</small></strong>
       <p>${escapeHtml(product.shortDescription)}</p>
       <ul>${product.features.slice(0, 3).map((feature) => `<li>${escapeHtml(feature)}</li>`).join("")}</ul>
-      <button class="button button-full ${product.popular ? "button-primary" : ""}" data-order data-product-id="${escapeHtml(product.id)}">Order paket</button>
+       <button class="button button-full ${product.popular ? "button-primary" : ""}" data-order data-product-id="${escapeHtml(product.id)}">Pilih paket</button>
       <button class="plan-more" type="button" data-details="${escapeHtml(product.id)}">Lihat detail lengkap →</button>
     </article>
   `).join("");
@@ -250,13 +250,13 @@ function openDetails(productId) {
   details.innerHTML = `
     <div class="product-detail" role="dialog" aria-modal="true" aria-label="Detail ${escapeHtml(product.name)}">
       <button class="close product-detail-close" type="button" aria-label="Tutup">×</button>
-      <span class="section-number">PRODUCT DETAIL</span>
+      <span class="section-number">DETAIL PAKET</span>
       <h2>${escapeHtml(product.name)}</h2>
       <p class="product-detail-description">${escapeHtml(product.description)}</p>
       <div class="product-detail-price"><b>${escapeHtml(product.price)}</b><span>${product.days} hari akses</span></div>
       <h3>Yang termasuk</h3>
       <ul class="product-detail-features">${features}</ul>
-      <button class="button button-primary button-full" type="button" data-detail-order>Order paket ↗</button>
+      <button class="button button-primary button-full" type="button" data-detail-order>Pilih paket ↗</button>
     </div>
   `;
   document.body.appendChild(details);
@@ -271,7 +271,7 @@ $("#licenseForm").addEventListener("submit", async (event) => {
   const output = $("#licenseResult");
   const key = $("#licenseKey").value.trim();
   if (!key) return;
-  output.innerHTML = `<div class="license-loading">Memeriksa key...</div>`;
+  output.innerHTML = `<div class="license-loading">Sedang memeriksa key...</div>`;
 
   try {
     const response = await fetch(`${CONFIG.apiBase}/api/license/validate`, {
@@ -281,7 +281,7 @@ $("#licenseForm").addEventListener("submit", async (event) => {
     });
     const text = await response.text();
     let data;
-    try { data = JSON.parse(text); } catch { throw new Error(`API response bukan JSON (HTTP ${response.status}).`); }
+    try { data = JSON.parse(text); } catch { throw new Error(`Respons server tidak valid (HTTP ${response.status}).`); }
 
     if (!data.active && data.code !== "EXPIRED" && data.code !== "REVOKED") {
       output.innerHTML = `<div class="license-error">${escapeHtml(data.message || "Key tidak ditemukan.")}</div>`;
@@ -289,6 +289,12 @@ $("#licenseForm").addEventListener("submit", async (event) => {
     }
 
     const status = String(data.status || (data.active ? "active" : data.code === "EXPIRED" ? "expired" : "revoked")).toUpperCase();
+    const statusText = ({
+      ACTIVE: "AKTIF",
+      ISSUED: "BELUM AKTIF",
+      EXPIRED: "KEDALUWARSA",
+      REVOKED: "DICABUT",
+    })[status] || status;
     const statusClass = status === "ACTIVE" ? "is-active" : status === "ISSUED" ? "is-issued" : "is-expired";
     const plan = Number(data.planDays) === 1 ? "1 Hari" : `${Number(data.planDays) || 0} Hari`;
     const fmt = (value) => value ? `${new Date(value).toLocaleString("id-ID", { weekday: "long", day: "2-digit", month: "long", year: "numeric", hour: "2-digit", minute: "2-digit" })} WIB` : "Belum diaktifkan";
@@ -300,18 +306,18 @@ $("#licenseForm").addEventListener("submit", async (event) => {
 
     output.innerHTML = `
       <div class="license-detail ${statusClass}">
-        <div class="license-detail-head"><div><span>LICENSE DETAIL</span><strong>${escapeHtml(data.message || "Status license")}</strong></div><b class="license-status">● ${status}</b></div>
+        <div class="license-detail-head"><div><span>DETAIL LISENSI</span><strong>${escapeHtml(data.message || "Status lisensi")}</strong></div><b class="license-status">● ${statusText}</b></div>
         <div class="license-detail-grid">
           <div><small>👤 Pembeli</small><b>${escapeHtml(data.customer || "-")}</b></div>
-          <div><small>🔑 License Key</small><b class="license-key-value">${escapeHtml(data.key || key.toUpperCase())}</b></div>
+          <div><small>🔑 Kunci Lisensi</small><b class="license-key-value">${escapeHtml(data.key || key.toUpperCase())}</b></div>
           <div><small>📦 Paket</small><b>${plan}</b></div>
           <div><small>📅 Dibeli</small><b>${fmt(data.createdAt)}</b></div>
           <div><small>🕐 Diaktifkan</small><b>${fmt(data.activatedAt)}</b></div>
           <div><small>⏳ Masa Aktif</small><b>${data.active ? duration(data.remainingSeconds) : plan}</b></div>
-          <div class="license-detail-wide"><small>📆 ${data.active ? "Aktif Sampai" : "Expired"}</small><b>${fmt(data.expiresAt)}</b></div>
+          <div class="license-detail-wide"><small>📆 ${data.active ? "Aktif Sampai" : "Berakhir"}</small><b>${fmt(data.expiresAt)}</b></div>
         </div>
       </div>`;
   } catch (error) {
-    output.innerHTML = `<div class="license-error">${escapeHtml(error.message || "API license belum tersambung. Coba lagi setelah backend aktif.")}</div>`;
+    output.innerHTML = `<div class="license-error">${escapeHtml(error.message || "API lisensi belum tersambung. Coba lagi setelah backend aktif.")}</div>`;
   }
 });
